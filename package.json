@@ -1,0 +1,27 @@
+{
+  "name": "midterm-project-401n12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarkis74/midterm-project-401n12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarkis74/midterm-project-401n12/issues"
+  },
+  "homepage": "https://github.com/sarkis74/midterm-project-401n12#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "imdb-api": "^4.0.2"
+  }
+}
