@@ -6,8 +6,13 @@ const cors = require('cors');
 const app = express();
 const imdb = require('imdb-api');
 
-const cli = new imdb.Client({apiKey: `${process.env.MOVIES_API_KEY}`});
-cli.get({'name': 'The Toxic Avenger'}).then(console.log).catch(err => console.log(err));
+// const cli = new imdb.Client({apiKey: `${process.env.MOVIES_API_KEY}`});
+
+imdb.search({
+    name: 'Shazam'
+}, {
+    apiKey: `${process.env.MOVIES_API_KEY}`
+}).then(console.log).catch(console.log);
 
 // Esoteric Resources
 const errorHandler = require('../src/middleware/500' );
