@@ -5,11 +5,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const imdb = require('imdb-api');
+let movieTitle = process.argv.slice(2)[0]
 
 // const cli = new imdb.Client({apiKey: `${process.env.MOVIES_API_KEY}`});
 
 imdb.search({
-    name: 'Shazam'
+    name: movieTitle
 }, {
     apiKey: `${process.env.MOVIES_API_KEY}`
 }).then(console.log).catch(console.log);
