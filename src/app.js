@@ -7,13 +7,15 @@ const app = express();
 const imdb = require('imdb-api');
 let movieTitle = process.argv.slice(2)[0]
 
-// const cli = new imdb.Client({apiKey: `${process.env.MOVIES_API_KEY}`});
 
-imdb.search({
-    name: movieTitle
-}, {
-    apiKey: `${process.env.MOVIES_API_KEY}`
-}).then(console.log).catch(console.log);
+// IMDB has its own methods
+const cli = new imdb.Client({apiKey: `${process.env.MOVIES_API_KEY}`});
+
+cli.search({'name': movieTitle}).then((search) => {
+    for (const result of search.results) {
+        console.log(result);
+    }
+});
 
 // Esoteric Resources
 const errorHandler = require('../src/middleware/500' );
@@ -30,6 +32,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(notFound);
 app.use(errorHandler);
 
+// Testing server route
 app.get('/test', (res, req) => res.status(200).send('hello'));
 
 
